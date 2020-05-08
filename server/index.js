@@ -28,7 +28,7 @@ app.get('/tasks', async (req, res) => {
 app.put('/tasks', async (req, res) => {
   const tasksIds = req.body;
   for (const [i, id] of tasksIds.entries()) {
-    await Task.updateOne({_id: id}, {sorting: i});
+    await Task.updateOne({ _id: id }, { sorting: i });
     // console.log(i, id)
   }
   res.json('the list was ordered');
